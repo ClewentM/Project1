@@ -1120,7 +1120,31 @@ area {
     background-size: contain;
 }
 
-#info {
+#info :not(h4){
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--spacing);
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+}
+
+#info p {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    text-align: justify;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: var(--spacing-2);
+    padding-left: var(--spacing-2);
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+}
+
+#info h4 {
     font-family: var(--main-font);
     font-size: var(--text-font-size);
     color: var(--dark);
@@ -1131,6 +1155,7 @@ area {
 }
 
 #contact {
+    position: relative;
     font-family: var(--main-font);
     font-size: var(--text-font-size);
     color: var(--dark);
@@ -1139,6 +1164,51 @@ area {
     margin-left: auto;
     margin-right: auto;
     margin-top: var(--spacing);
+}
+
+#contact h4 {
+    margin-bottom: 5px;
+}
+
+#contact #name {
+    position: absolute;
+    width: 60%;
+    right: 0;
+}
+
+#contact #email {
+    position: absolute;
+    width: 60%;
+    right: 0;
+}
+
+#contact #message {
+    position: absolute;
+    top: 70px;
+    width: 60%;
+    right: 0;
+}
+
+#contact #submitBtn {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    position: absolute;
+    width: 38%;
+    left: 0;
+    top: 130px;
+}
+
+#links-container {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--spacing);
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #links {
@@ -1150,4 +1220,17 @@ area {
     margin-left: auto;
     margin-right: auto;
     margin: var(--spacing);
+}
+
+#links p {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    text-align: justify;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing);
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
