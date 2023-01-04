@@ -1,0 +1,1153 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+:root {
+    --primary-color: #001522;
+    /* --primary-color: #484848; */
+    --secondary-color: #2F4858;
+    /* --secondary-color: #848484; */
+    --tertiary-color: #b6b6b6;
+    /* --tertiary-color: #b6b6b6; */
+    --background-color: #F1F1E6;
+    /* --background-color: #e5e5e5; */
+  
+    --light: #ffeeee;
+    --dark: #112211;
+  
+    --spacing: 8px;
+    --spacing-2: calc(var(--spacing) * 2);
+    --spacing-4: calc(var(--spacing) * 4);
+  
+    --main-font: monospace;
+    --title-font: bungee; 
+  
+    --text-font-size: 8pt;
+    --title-font-size: 10pt;
+    --menu-font-size: 14pt;
+    --home-title-font-size: 21pt;
+  }
+
+body {
+    background-color: var(--background-color);
+}
+
+/* navigation barre */
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+nav {
+    position: relative;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    background-color: var(--primary-color);
+    justify-content: space-between;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 4;
+}
+
+.home-main-title {
+    font-family: var(--title-font);
+    font-size: var(--home-title-font-size);
+    color: var(--tertiary-color);
+}
+
+.navlink-container{
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    display: none;
+    justify-content: space-around;
+    width: 30vw;
+    height: 100%;
+    z-index: 1;
+    justify-content: start;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    align-items: flex-end;
+    position: fixed;
+    top: 100px;
+    right: 0px;
+    width: 22vw;
+    height: 170px;
+    padding-top: var(--spacing);
+    transition: 0.5s;
+}
+
+.menu li {
+    list-style: none;
+    margin: var(--spacing);
+}
+
+.menu li a {
+    font-size: var(--menu-font-size);
+    transition: 0.3s;
+    color: var(--light);
+    text-decoration: none;
+}
+
+.burger-menu{
+    position : relative;
+    width : 45px;
+    height : 8px;
+    background-color: var(--tertiary-color);
+    border-radius: 8px;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.burger-menu:before,
+.burger-menu:after{
+    content:"";
+    position: absolute;
+    height : 8px;
+    right: 0;
+    background-color: var(--tertiary-color);
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.burger-menu:before{
+    top: -16px;
+    width: 45px;
+}
+
+.burger-menu:after{
+    top: 16px;
+    width: 45px;
+}
+
+.toggle-btn{
+    position: absolute;
+    top: 0px;
+    right: 2.5%;
+    width: 45px;
+    height: 100%;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.navlink-container input:checked ~ .burger-menu{
+    background-color: transparent;
+    
+}
+
+.navlink-container input:checked ~ .burger-menu:before{
+    top :0;
+    transform: rotate(-45deg);
+    width: 50px;
+}
+
+.navlink-container input:checked ~ .burger-menu:after{
+    top :0;
+    transform: rotate(45deg);
+    width: 50px;
+}
+
+.navlink-container input:checked ~ .menu{
+    display:flex;
+}
+
+#description-text {
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--spacing);
+    background-color: var(--tertiary-color);
+    border-radius: 5px;
+}
+
+#description-text p {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    text-align: justify;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--spacing);
+}
+
+#map-section img {
+    position: relative;
+    width: 95%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--spacing);
+    margin-bottom: 0;
+    z-index: 1;
+}
+
+area {
+    /* this color is here just to turn clickable area visible during development */
+    /* border: yellowgreen solid 2px; */
+    z-index: 5;
+  }
+
+.circle-001 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 14%;
+    left: 70%;
+}
+
+#link-001 {
+    position: absolute;
+    top: 250px;
+}
+
+.circle-002 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 30%;
+    left: 40%;
+}
+
+.circle-003 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 60%;
+}
+
+.circle-004 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 65%;
+    left: 32%;
+}
+
+.circle-005 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 55%;
+    left: 18%;
+}
+
+.circle-006 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 25%;
+    left: 20%;
+}
+.circle-007 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 25%;
+    left: 55%;
+}
+
+.circle-008 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 45%;
+}
+
+.circle-009 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 80%;
+    left: 55%;
+}
+
+.circle-010 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 75%;
+    left: 8%;
+}
+
+.circle-011 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 85%;
+    left: 85%;
+}
+
+.circle-012 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 45%;
+    left: 85%;
+}
+
+.circle-013 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 35%;
+    left: 55%;
+}
+
+.circle-014 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 35%;
+    left: 10%;
+}
+
+.circle-015 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 85%;
+    left: 25%;
+}
+
+.circle-016 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 13%;
+    left: 40%;
+}
+
+.circle-017 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 13%;
+    left: 90%;
+}
+
+.circle-018 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 32%;
+    left: 68%;
+}
+
+.circle-019 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 52%;
+    left: 32%;
+}
+
+.circle-020 {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 62%;
+    left: 68%;
+}
+
+/* Below, the pulse effect animation on map's button */
+
+#map-section {
+    position: relative;
+}
+
+.pulse-button-001 {
+    top: 14%;
+    left: 70%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-1.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+  
+.pulse-button-002 {
+    top: 30%;
+    left: 40%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-2.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-003 {
+    top: 50%;
+    left: 60%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-3.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-004 {
+    top: 65%;
+    left: 32%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-4.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-005 {
+    top: 55%;
+    left: 18%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-5.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-006 {
+    top: 25%;
+    left: 20%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-6.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-007 {
+    top: 25%;
+    left: 55%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-7.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-008 {
+    top: 50%;
+    left: 45%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-8.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-009 {
+    top: 80%;
+    left: 55%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-9.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-010 {
+    top: 75%;
+    left: 8%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-10.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-011 {
+    top: 85%;
+    left: 85%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-11.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-012 {
+    top: 45%;
+    left: 85%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-12.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-013 {
+    top: 35%;
+    left: 55%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-13.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-014 {
+    top: 35%;
+    left: 10%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-14.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-015 {
+    top: 85%;
+    left: 25%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-15.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-016 {
+    top: 13%;
+    left: 40%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-16.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-017 {
+    top: 13%;
+    left: 90%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-17.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-018 {
+    top: 32%;
+    left: 68%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-18.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-019 {
+    top: 52%;
+    left: 32%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-19.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button-020 {
+    top: 62%;
+    left: 68%;
+    z-index: 2;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 50%;
+    background-color: #e84c3d;
+    background-image: url(number-20.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+  @-webkit-keyframes pulse {to {box-shadow: 0 0 0 1rem rgba(232, 76, 61, 0);}}
+  @-moz-keyframes pulse {to {box-shadow: 0 0 0 1rem rgba(232, 76, 61, 0);}}
+  @-ms-keyframes pulse {to {box-shadow: 0 0 0 1rem rgba(232, 76, 61, 0);}}
+  @keyframes pulse {to {box-shadow: 0 0 0 1rem rgba(232, 76, 61, 0);}}
+
+/* end of the pulse effect animation on map's button */
+
+#photo-gallery {
+    margin-top: var(--spacing);
+    /* background-color: var(--primary-color); */
+}
+
+#photo-gallery img {
+    width: 95%;
+    height: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing);
+    margin-top: 3px;
+    border: solid var(--primary-color) 3px;
+}
+
+#photo-gallery a {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    margin-left: var(--spacing);
+    /* background-color: var(--tertiary-color); */
+    /* padding-bottom: 1rem;
+    border-radius: 3px; */
+}
+
+/* #photo-gallery li {
+    background-color: var(--tertiary-color);
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+} */
+
+#message-icon {
+    background-image: url("message-icon.png");
+    background-size: 1rem;
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+    margin-left: 2.5%;
+    top: -4px;
+    margin-bottom: 5px;
+    border: none;
+}
+
+#like-icon {
+    background-image: url("like-btn-unselected.png");
+    background-size: 2.3rem;
+    width: 2.3rem;
+    height: 1rem;
+    position: relative;
+    top: -27px;
+    left: 88%;
+    border: none;
+    margin-bottom: -15px;
+
+}
+
+#photo-001::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-01.png);
+    background-size: contain;
+    /* border: solid var(--primary-color) 2px;
+    border-radius: 50%; */
+}
+
+#photo-002::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-02.png);
+    background-size: contain;
+}
+
+#photo-003::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-03.png);
+    background-size: contain;
+}
+
+#photo-004::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-04.png);
+    background-size: contain;
+}
+
+#photo-005::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-05.png);
+    background-size: contain;
+}
+
+#photo-006::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-06.png);
+    background-size: contain;
+}
+
+#photo-007::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-07.png);
+    background-size: contain;
+}
+
+#photo-008::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-08.png);
+    background-size: contain;
+}
+
+#photo-009::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-09.png);
+    background-size: contain;
+}
+
+#photo-010::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-010.png);
+    background-size: contain;
+}
+
+#photo-011::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-011.png);
+    background-size: contain;
+}
+
+#photo-012::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-012.png);
+    background-size: contain;
+}
+
+#photo-013::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-013.png);
+    background-size: contain;
+}
+
+#photo-014::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-014.png);
+    background-size: contain;
+}
+
+#photo-015::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-015.png);
+    background-size: contain;
+}
+
+#photo-016::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-016.png);
+    background-size: contain;
+}
+
+#photo-017::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-017.png);
+    background-size: contain;
+}
+
+#photo-018::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-018.png);
+    background-size: contain;
+}
+
+#photo-019::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-019.png);
+    background-size: contain;
+}
+
+#photo-020::before{
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0.2rem;
+    margin-right: 0.4rem;
+    content: "";
+    background-image: url(number-020.png);
+    background-size: contain;
+}
+
+#info {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--spacing);
+}
+
+#links {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: var(--spacing);
+}
