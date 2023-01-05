@@ -72,18 +72,16 @@ nav {
 .menu{
     display: none;
     justify-content: space-around;
-    width: 30vw;
-    height: 100%;
     z-index: 1;
     justify-content: start;
     flex-direction: column;
     background-color: var(--primary-color);
     align-items: flex-end;
     position: fixed;
-    top: 100px;
+    top: 95px;
     right: 0px;
-    width: 22vw;
-    height: 170px;
+    width: 30vw;
+    height: 175px;
     padding-top: var(--spacing);
     transition: 0.5s;
 }
@@ -95,8 +93,9 @@ nav {
 
 .menu li a {
     font-size: var(--menu-font-size);
+    font-family: var(--title-font);
+    color: var(--tertiary-color);
     transition: 0.3s;
-    color: var(--light);
     text-decoration: none;
 }
 
@@ -159,9 +158,30 @@ nav {
     width: 50px;
 }
 
-.navlink-container input:checked ~ .menu{
-    display:flex;
+#map-menu-link {
+    position: relative;
+    top: -23px;
 }
+
+#up-button{
+	display: none;
+	position: fixed;
+	top: 120px;
+    width: 12%;
+    left: 44%;
+    padding: 4px 4px 10px 4px;
+    background-color: var(--tertiary-color);
+    border-radius: 50%;
+    font-family: var(--main-font);
+    font-size: var(--home-title-font-size);
+    color: var(--primary-color);
+    text-align: center;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    z-index: 6;
+}
+/* #up-button.show{
+	display: block;
+} */
 
 #description-text {
     width: 95%;
@@ -1152,6 +1172,7 @@ area {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5px;
 }
 
 #contact {
@@ -1168,6 +1189,7 @@ area {
 
 #contact h4 {
     margin-bottom: 5px;
+    margin-top: 18px;
 }
 
 #contact #name {
@@ -1196,7 +1218,19 @@ area {
     position: absolute;
     width: 38%;
     left: 0;
-    top: 130px;
+    top: 120px;
+}
+
+#contact input {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
+}
+
+#contact textarea {
+    font-family: var(--main-font);
+    font-size: var(--text-font-size);
+    color: var(--dark);
 }
 
 #links-container {

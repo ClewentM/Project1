@@ -7,6 +7,7 @@
     <title>SE | Graffiti Locator</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Calibri' rel='stylesheet'>
 </head>
 <body>
     <nav class="sticky">
@@ -15,7 +16,7 @@
             <input type="checkbox" class="toggle-btn">
             <div class="burger-menu">
                 <ul class="menu">
-                    <li><a href="#map-section">Carte</a></li>
+                    <li><a href="#map-menu-link">Carte</a></li>
                     <li><a href="#info">Info</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#links">Liens</a></li>
@@ -23,6 +24,9 @@
             </div>
         </div>
     </nav>
+    <div id="map-menu-link">
+        <a href="#map-menu-link" id="up-button">↑</a>
+    </div>
     <section id="description-text">
         <p>Saint-Etienne Graffiti Locator vous propose une sélection de graffiti visibles dans la ville de Saint-Etienne. Cliquez sur les numéros sur la carte interactive pour voir les graffiti. 
         </p>
@@ -266,11 +270,11 @@
                 <br>
                 <br>
                 <label for="email">Email (obligatoire)</label>
-                <input type="text" id="email">
+                <input type="text" id="email" required>
                 <br>
                 <br>
                 <label>Votre message :
-                    <textarea id="message" name="message" rows="5" cols="33" maxlength="500" wrap></textarea>
+                    <textarea id="message" name="message" rows="5" cols="33" maxlength="500" wrap required></textarea>
                 </label>
                 <br>
                 <br>
@@ -289,5 +293,6 @@
                 <p><a href="https://street-art-lyon.com/carte-du-street-art-lyon/">Carte du Street Art à Lyon</a></p>
             </div>
     </section>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
